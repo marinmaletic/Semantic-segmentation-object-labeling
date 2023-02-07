@@ -1,0 +1,6 @@
+<launch>
+<arg name="path" default="/home/malex/Documents/Seminar1/" />
+<arg name="file_1" default="larics_c11_image_raw_depth_segmentation" />
+<node pkg="rosbag" type="play" name="player" output="screen" args="--clock $(arg path)$(arg file_1).bag"/>
+<node pkg="rqt_image_view" type="rqt_image_view" name="image_view_debug" args="/camera/output/labeled_image_raw"/>
+</launch>
